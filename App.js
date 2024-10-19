@@ -1,18 +1,25 @@
-import React, {useState, useEffect} from 'react';
-import {View, Text, TextInput, ScrollView} from 'react-native';
+import * as React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Welcome from './Pages/welcome';
 import Login from './Pages/login';
 import Register from './Pages/register';
-import Welcome from './Pages/welcome';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <View>
-      <ScrollView>
-        {/* <Login />
-        <Register /> */}
-        <Welcome />
-      </ScrollView>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Welcome"
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

@@ -9,7 +9,7 @@ import {
   Image,
 } from 'react-native';
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -87,8 +87,12 @@ const Login = () => {
               />
             </View>
             <View style={styles.name}>
-              <Text>Don't have an account? </Text>
-              <Text style={{color: '#661FF8'}}> Sign Up</Text>
+              <Text style={{color: '#8C8C8C'}}>Don't have an account? </Text>
+              <Text
+                style={{color: '#661FF8'}}
+                onPress={() => navigation.navigate('Register')}>
+                Sign Up
+              </Text>
             </View>
           </View>
         </View>

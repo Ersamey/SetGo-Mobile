@@ -9,7 +9,7 @@ import {
   Image,
 } from 'react-native';
 
-const Register = () => {
+const Register = ({navigation}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -101,7 +101,11 @@ const Register = () => {
             </View>
             <View style={styles.name}>
               <Text>Already have an account? </Text>
-              <Text style={{color: '#661FF8'}}> Log in</Text>
+              <Text
+                style={{color: '#661FF8'}}
+                onPress={() => navigation.navigate('Login')}>
+                Log In
+              </Text>
             </View>
           </View>
         </View>
