@@ -54,8 +54,10 @@ const Login = ({navigation}) => {
             style={styles.input}
           />
           <View style={styles.btnTengah}>
-            <TouchableOpacity style={styles.btn}>
-              <Text style={styles.btnText}>Log in</Text>
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => navigation.navigate('Siswa')}>
+              <Text style={styles.btnText}>Login</Text>
             </TouchableOpacity>
             <Text style={{color: '#661FF8'}}>Forgot Password?</Text>
             <View
